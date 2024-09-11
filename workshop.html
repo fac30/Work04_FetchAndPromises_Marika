@@ -8,10 +8,14 @@
   <body>
     <h1>Open the console</h1>
     <script>
-       const pokePromise = fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
-pokePromise
-  .then((response) => response.json())
-  .then((pikachu) => console.log(pikachu))
+       function getUser(username) {
+        const user_url = `https://api.github.com/users/${username}`;
+        return fetch(user_url)
+        .then((response) => response.json());
+       }
+       
+       getUser("oliverjam")
+  .then((user) => console.log(user))
   .catch((error) => console.log(error));
     </script>
   </body>

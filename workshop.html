@@ -8,10 +8,11 @@
   <body>
     <h1>Open the console</h1>
     <script>
-       const pokemonPromise = fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
-       pokePromise
-       .then((response) => response.json());
-       .then((pikachu) => console.log(pikachu));
+       const pokePromise = fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+pokePromise
+  .then((response) => response.json())
+  .then((pikachu) => console.log(pikachu))
+  .catch((error) => console.log(error));
     </script>
   </body>
 </html>

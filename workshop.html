@@ -13,10 +13,23 @@
         return fetch(user_url)
         .then((response) => response.json());
        }
-       
+
        getUser("oliverjam")
   .then((user) => console.log(user))
   .catch((error) => console.log(error));
+
+
+
+  function getRepos(user) {
+        return fetch(user.repos_url).then((response) => response.json());
+      }
+
+      getUser("oliverjam")
+        .then(getRepos)
+        .then(console.log)
+        .catch(console.error);
+
+
     </script>
   </body>
 </html>
